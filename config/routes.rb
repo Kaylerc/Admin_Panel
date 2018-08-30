@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+
+  resources :students
+
   get 'cohort/new'
   get 'cohort/edit'
   get 'cohort/index'
@@ -14,9 +18,5 @@ Rails.application.routes.draw do
   get 'instructors/index'
   get 'instructors/show'
 
-  get 'students/show'
-  get 'students/new'
-  get 'students/edit'
-  get 'students/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

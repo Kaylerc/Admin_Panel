@@ -16,8 +16,15 @@ ActiveRecord::Schema.define(version: 2018_08_28_214501) do
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
+    t.string "email"
+    t.string "password_digest"
+    t.string "education"
+    t.string "salary"
+    t.string "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_students_on_email", unique: true
+    t.index [nil], name: "index_students_on_school_id", unique: true
   end
 
 end
