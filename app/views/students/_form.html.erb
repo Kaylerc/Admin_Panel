@@ -1,11 +1,8 @@
 <%= form_for(@student) do |f| %>
-  <%= f.file_field :profile_photo %></br>
   <%= f.text_field :first_name, placeholder: 'First Name' %></br>
   <%= f.text_field :last_name, placeholder: 'Last Name' %></br>
+  <%= f.email_field :email, placeholder: 'Email', required: true%></br>
   <%= f.number_field :age, placeholder: 'Age', min: 1, max:150 %></br>
-
-
-
 <p>
     <b>Highest Level of Education</b><br />
     <%= f.radio_button :education, 'High School' %> High School<br />
@@ -13,7 +10,5 @@
     <%= f.radio_button :education, 'Masters' %> Masters<br />
     <%= f.radio_button :education, 'PHD' %> PHD<br />
 </p>
-
-
-  <%= f.submit 'Add Student' %>
+    <%= f.submit %>
 <% end %>

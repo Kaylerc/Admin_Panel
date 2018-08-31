@@ -13,7 +13,5 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     add_index :students, :email, unique: true
-    add_index :students, :school_id, unique: true
-
   end
 end
