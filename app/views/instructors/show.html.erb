@@ -1,2 +1,11 @@
-<h1>Instructors#show</h1>
-<p>Find me in app/views/instructors/show.html.erb</p>
+<!-- <h1>Instructors#show</h1>
+<p>Find me in app/views/instructors/show.html.erb</p> -->
+
+<%= link_to 'Edit', edit_instructor_path %><br>
+
+First Name: &nbsp <%= @instructor.first_name %> <br>
+Last Name: &nbsp <%= @instructor.last_name %> <br>
+Email: &nbsp <%= @instructor.email %> <br>
+Age: &nbsp <%= @instructor.age %> <br>
+Education: &nbsp <%= @instructor.education %> <br>
+Salary: $ &nbsp <%= @instructor.salary %> <br>

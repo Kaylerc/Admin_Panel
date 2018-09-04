@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_214501) do
+ActiveRecord::Schema.define(version: 2018_09_04_142002) do
+
+  create_table "instructors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "email"
+    t.string "password_digest"
+    t.string "education"
+    t.string "salary"
+    t.string "user"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_instructors_on_email", unique: true
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "first_name"

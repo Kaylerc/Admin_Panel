@@ -6,12 +6,12 @@ before_action :set_student, only: [:show, :edit, :update]
   end
 
 
-  def show
+  def new
+    @student = Student.new
   end
 
 
-  def new
-    @student = Student.new
+  def show
   end
 
 
@@ -21,7 +21,7 @@ before_action :set_student, only: [:show, :edit, :update]
 
   def update
     if @student.update(student_params)
-      p "Student Successfully Updated!"
+      p 'Student Successfully Updated!'
       redirect_to @student
     else
       render 'edit'
@@ -35,7 +35,7 @@ before_action :set_student, only: [:show, :edit, :update]
       p 'student saved'
       redirect_to @student
     else
-      p 'student input rejected for errors'
+      p 'Student input rejected for errors'
       p @student.errors.messages
       render 'new'
     end
@@ -43,7 +43,6 @@ before_action :set_student, only: [:show, :edit, :update]
 
 
 private
-
 
   def set_student
     @student = Student.find(params[:id])

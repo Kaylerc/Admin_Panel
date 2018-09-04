@@ -3,8 +3,9 @@
 <%= link_to "Edit", edit_student_path %>
 
 
-<h1><%= @student.first_name %> </h1>
-<h1><%= @student.last_name %> </h1>
-<h1><%= @student.email %> </h1>
-<h1><%= @student.age %> </h1>
-<h1><%= @student.education %> </h1>
+First Name: &nbsp <%= @student.first_name %> <br>
+Last Name: &nbsp <%= @student.last_name %> <br>
+Email: &nbsp <%= @student.email %> <br>
+Age: &nbsp <%= @student.age %> <br>
+Education: &nbsp <%= @student.education %> <br>
+Salary: $ &nbsp <%= @student.salary %> <br>

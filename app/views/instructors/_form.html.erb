@@ -1,0 +1,16 @@
+<%= form_for(@instructor) do |f| %>
+  <%= f.text_field :first_name, placeholder: 'First Name', required: true%><br>
+  <%= f.text_field :last_name, placeholder: 'Last Name', required: true%><br>
+  <%= f.email_field :email, placeholder: 'Email', required: true %><br>
+  <%= f.number_field :age, placeholder: 'Age', min: 1, max:150, required: true%><br>
+  $ <%= f.number_field :salary, placeholder: 'Salary', min: 1,  required: true%>
+
+  <p>
+      <b>Highest Level of Education<br>
+      <%= f.radio_button :education, 'High School' %> High School<br>
+      <%= f.radio_button :education, 'College' %> College<br>
+      <%= f.radio_button :education, 'Masters' %> Masters<br>
+      <%= f.radio_button :education, 'PHD' %> PHD<br>
+  </p>
+      <%= f.submit %>
+  <% end %>
