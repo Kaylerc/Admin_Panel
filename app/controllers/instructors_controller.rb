@@ -49,7 +49,7 @@ end
     end
 
     def instructor_params
-      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohert)
+      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohort)
     end
 
 end

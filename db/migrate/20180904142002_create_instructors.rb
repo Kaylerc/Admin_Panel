@@ -9,6 +9,7 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
       t.string :education
       t.string :salary
       t.string :user
+      t.string :cohort_name
       t.references :cohort, foreign_key: true
 
       t.timestamps
