@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
 
-
+  resources :cohorts
+  resources :courses
   resources :students
   resources :instructors
+  # 
+  # get 'cohorts/new'
+  # get 'cohorts/edit'
+  # get 'cohorts/index'
+  # get 'cohorts/show'
 
-  get 'cohort/new'
-  get 'cohort/edit'
-  get 'cohort/index'
-  get 'cohort/show'
-
-  get 'courses/new'
-  get 'courses/edit'
-  get 'courses/index'
-  get 'courses/show'
+  # get 'courses/new'
+  # get 'courses/edit'
+  # get 'courses/index'
+  # get 'courses/show'
 
   # get 'instructors/new'
   # get 'instructors/edit'

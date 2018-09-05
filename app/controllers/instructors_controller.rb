@@ -11,6 +11,18 @@ before_action :set_instructor, only: [:show, :edit, :update]
   end
 
 
+  def create
+    @instructor = Instructor.new(instructor_params)
+    if @instructor.save
+      p 'Instructor Successfully Saved!'
+      redirect_to @instructor
+    else
+      p 'Instructor input regected for errors'
+      p @instructor.errors.messages
+      render 'new'
+    end
+  end
+
   def show
   end
 
@@ -29,17 +41,6 @@ before_action :set_instructor, only: [:show, :edit, :update]
 end
 
 
-  def create
-    @instructor = Instructor.new(instructor_params)
-    if @instructor.save
-      p 'Instructor Successfully Saved!'
-      redirect_to @instructor
-    else
-      p 'Instructor input regected fo errors'
-      p @instructor.errors.messages
-      render 'new'
-    end
-  end
 
   private
 
@@ -48,7 +49,7 @@ end
     end
 
     def instructor_params
-      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary)
+      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohert)
     end
 
 end

@@ -9,6 +9,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :education
       t.string :salary
       t.string :user
+      
 
       t.timestamps
     end

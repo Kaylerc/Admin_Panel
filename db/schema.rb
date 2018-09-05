@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_142002) do
+ActiveRecord::Schema.define(version: 2018_09_04_233753) do
+
+  create_table "cohorts", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "instructor_id"
+    t.integer "student_id"
+    t.integer "courses_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["courses_id"], name: "index_cohorts_on_courses_id"
+  end
+
+  create_table "cohorts_students", id: false, force: :cascade do |t|
+    t.integer "instructor_id"
+    t.integer "student_id"
+    t.index ["instructor_id", "student_id"], name: "index_cohorts_students_on_instructor_id_and_student_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.integer "class_hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "instructors", force: :cascade do |t|
     t.string "first_name"
@@ -21,8 +46,10 @@ ActiveRecord::Schema.define(version: 2018_09_04_142002) do
     t.string "education"
     t.string "salary"
     t.string "user"
+    t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_instructors_on_cohort_id"
     t.index ["email"], name: "index_instructors_on_email", unique: true
   end
 
