@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  root 'pages#home'
 
   resources :cohorts
   resources :courses
   resources :students
   resources :instructors
-  # 
+  #
   # get 'cohorts/new'
   # get 'cohorts/edit'
   # get 'cohorts/index'
