@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_233753) do
+ActiveRecord::Schema.define(version: 2018_09_05_214230) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2018_09_04_233753) do
   end
 
   create_table "cohorts_students", id: false, force: :cascade do |t|
-    t.integer "instructor_id"
-    t.integer "student_id"
-    t.index ["instructor_id", "student_id"], name: "index_cohorts_students_on_instructor_id_and_student_id"
+    t.string "cohort_id"
+    t.string "student_id"
+    t.index ["cohort_id", "student_id"], name: "index_cohorts_students_on_cohort_id_and_student_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -46,8 +46,11 @@ ActiveRecord::Schema.define(version: 2018_09_04_233753) do
     t.string "education"
     t.string "salary"
     t.string "user"
-    t.string "cohort_name"
+    t.integer "instructor_id"
+    t.integer "courses_id"
+    t.string "courses_name"
     t.integer "cohort_id"
+    t.string "cohort_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cohort_id"], name: "index_instructors_on_cohort_id"
@@ -63,6 +66,11 @@ ActiveRecord::Schema.define(version: 2018_09_04_233753) do
     t.string "education"
     t.string "salary"
     t.string "user"
+    t.integer "instructor_id"
+    t.integer "courses_id"
+    t.string "courses_name"
+    t.integer "cohort_id"
+    t.string "cohort_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_students_on_email", unique: true

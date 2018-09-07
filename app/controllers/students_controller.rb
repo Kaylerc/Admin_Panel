@@ -12,6 +12,7 @@ before_action :set_student, only: [:show, :edit, :update]
 
 
   def show
+    # @student.cohort.uniq.each
   end
 
 
@@ -31,6 +32,8 @@ before_action :set_student, only: [:show, :edit, :update]
 
   def create
     @student = Student.new(student_params)
+    @courses = Course.all
+    @cohort = Cohort.all
     if @student.save
       p 'student saved'
       redirect_to @student

@@ -1,2 +1,16 @@
-<h1>Cohort#show</h1>
-<p>Find me in app/views/cohort/show.html.erb</p>
+<%= link_to "Edit", edit_cohort_path %><br>
+
+
+Name: &nbsp&nbsp <%= @cohort.name %> <br>
+Start Date: &nbsp &nbsp <%= @cohort.start_date %> <br>
+End Date: &nbsp &nbsp <%= @cohort.end_date %> <br>
+<% if @cohort.courses_id %>
+  Course: &nbsp &nbsp <%= Course.find(@cohort.courses_id).name %> <br>
+  <% end %>
+<% if @cohort.instructor_id %>
+Instructor: &nbsp &nbsp <%= Instructor.find(@cohort.instructor_id).full_name %> <br>
+  <% end %>
+
+Students Enrolled
+
+<%= @cohort.students %> <br>

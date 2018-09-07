@@ -2,9 +2,11 @@
   <%= f.text_field :name, placeholder: 'Cohort Name', required: true%><br>
   <%= f.date_field :start_date, placeholder: 'Start Date', required: true%><br>
   <%= f.date_field :end_date, placeholder: 'End Date', required: true %><br>
-  <%= f.text_field :course, placeholder: 'Course', required: true%><br>
-
+  <%= f.collection_select(:courses_id, Course.all, :id, :name) %><br>
+  <%= f.collection_select(:instructor_id, Instructor.all, :id, :full_name) %><br>
 
 
   <%= f.submit %>
+  <hb>
+      <%= @students %>
 <% end %>

@@ -1,5 +1,7 @@
 class InstructorsController < ApplicationController
 before_action :set_instructor, only: [:show, :edit, :update]
+after_action :update_info, only: [:create]
+
 
   def index
     @instructors = Instructor.all
@@ -12,7 +14,9 @@ before_action :set_instructor, only: [:show, :edit, :update]
 
 
   def create
-    @instructor = Instructor.new(instructor_params)
+    @cohort = Cohort.all
+    @courses = Course.all
+        @instructor = Instructor.new(instructor_params)
     if @instructor.save
       p 'Instructor Successfully Saved!'
       redirect_to @instructor
@@ -24,10 +28,14 @@ before_action :set_instructor, only: [:show, :edit, :update]
   end
 
   def show
+    @cohort = Cohort.all
+    @courses = Course.all
   end
 
 
   def edit
+    @cohort = Cohort.all
+    @courses = Course.all
   end
 
 
@@ -49,7 +57,12 @@ end
     end
 
     def instructor_params
-      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohort)
+      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohort_id)
+    end
+
+    def update_info
+      @instructor.update(cohort_name: "#{@instructor.cohort.name}
+        ")
     end
 
 end

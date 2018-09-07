@@ -9,3 +9,9 @@ Email: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= @instructor.email %> <br>
 Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <%= @instructor.age %> <br>
 Education: &nbsp &nbsp&nbsp <%= @instructor.education %> <br>
 Salary: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp $  <%= @instructor.salary %> <br>
+
+<hb>
+  Teaching: &nbsp
+<% if @instructor.cohort_id%>
+  <%= Course.find(Cohort.find(@instructor.cohort_id).courses_id).name + " " + Cohort.find(@instructor.cohort_id).name %>
+<% end %>
