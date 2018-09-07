@@ -4,8 +4,8 @@
   <%= f.email_field :email, placeholder: 'Email', required: true %><br>
   <%= f.number_field :age, placeholder: 'Age', min: 1, max:150, required: true%><br>
   $ <%= f.number_field :salary, placeholder: 'Salary', min: 1,  required: true%><br>
-    Cohort:&nbsp  <%= f.collection_select(:cohort_id, Cohort.all, :id, :name) %><br>
-
+      Course:&nbsp  <%= f.collection_select(:courses_id, Course.all, :id, :name) %><br>
+      Cohort:&nbsp  <%= f.collection_select(:cohort_id, Cohort.all, :id, :name) %><br>
 
 
 

@@ -8,12 +8,8 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :education
       t.string :salary
-      t.string :user
-      t.integer :instructor_id
-      t.integer :courses_id
-      t.string :courses_name
+      t.integer :course_id
       t.integer :cohort_id
-      t.string :cohort_name
 
       t.timestamps
     end

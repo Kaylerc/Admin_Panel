@@ -46,7 +46,7 @@ after_action :update_info, only: [:create]
     else
       render 'edit'
   end
-endn
+end
 
 
 
@@ -57,7 +57,7 @@ endn
     end
 
     def instructor_params
-      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohort_id)
+      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohort_id, :course_id)
     end
 
     def update_info

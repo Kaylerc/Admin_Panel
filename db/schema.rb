@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2018_09_05_214230) do
   end
 
   create_table "cohorts_students", id: false, force: :cascade do |t|
-    t.string "cohort_id"
-    t.string "student_id"
+    t.integer "cohort_id"
+    t.integer "student_id"
     t.index ["cohort_id", "student_id"], name: "index_cohorts_students_on_cohort_id_and_student_id"
   end
 
