@@ -46,7 +46,7 @@ after_action :update_info, only: [:create]
     else
       render 'edit'
   end
-end
+endn
 
 
 
