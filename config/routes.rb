@@ -1,10 +1,30 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+
+  # root 'pages#home'
+  root 'sessions#new'
+
+  get 'register' => 'users#new'
+  get 'users/index'
+  get 'users/show'
+  get 'users/edit'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'users#show'
+
 
   resources :cohorts
   resources :courses
   resources :students
   resources :instructors
+  resources :users do
+      resources :sessions
+  end
+
+
+  # get 'sessions/new'
+  # get 'sessions/create'
+
+
   #
   # get 'cohorts/new'
   # get 'cohorts/edit'
