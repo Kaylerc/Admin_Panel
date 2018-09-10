@@ -17,13 +17,13 @@ class UsersController < ApplicationController
       p msg
       redirect_to @user
     else
-        msg = "There was an error in creatign yoru account.  Try again"
+        msg = "There was an error in creating your account.  Try again"
       p msg
       p @instructor.errors.messages
       render 'new'
     end
   end
-
+  
   def show
     @user = User.find(params[:id])
   end
@@ -37,17 +37,19 @@ class UsersController < ApplicationController
     end
   end
 
+
   def edit
   end
 
 
+
 private
 
-def set_user
-    @user = User.find(params[:id])
-end
+  def set_user
+      @user = User.find(params[:id])
+  end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :photo, :password, :password_confirmaiton, :id)
+    params.require(:user).permit(:first_name, :last_name, :email, :photo, :password, :password_confirmaiton )
   end
 end

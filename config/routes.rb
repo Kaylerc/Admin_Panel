@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  # root 'pages#home'
-  root 'sessions#new'
+  root 'pages#home'
+  # root 'sessions#new'
 
   get 'register' => 'users#new'
   get 'users/index'
@@ -9,17 +9,15 @@ Rails.application.routes.draw do
   get 'users/edit'
 
   get '/login' => 'sessions#new'
-  post '/login' => 'users#show'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
 
   resources :cohorts
   resources :courses
   resources :students
   resources :instructors
-  resources :users do
-      resources :sessions
-  end
-
+  resources :users
 
   # get 'sessions/new'
   # get 'sessions/create'

@@ -1,13 +1,14 @@
-views / pages / Home
+
 <h1>welcome to ____system name____</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<h3><%= link_to "write a new article", write_path %> </h3>
-<h3><%= link_to "recent articles", articles_path %> </h3>
-
-<h3><%= write_path %> its going to use a reality path for email</h3>
 
 
-<% if logged_in? %>
-you are logged in
+<%# if logged_in? %>
+<!-- you are logged in -->
+<%#end %>
 
-<% end %>
+
+<%= link_to 'Students', students_path %><br>
+<%= link_to 'Instructors', instructors_path %><br>
+<%= link_to 'Courses', courses_path %><br>
+<%= link_to 'Cohorts', cohorts_path %><br>
