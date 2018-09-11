@@ -1,14 +1,11 @@
-views/sessions/new
-
-
-<h1>Welcome!</h1>
-<h1>Log in</h1>
-<p>New to ___System name____ <%= link_to 'Create an account', register_path %></p>
-<%= form_for(:session, url: login_path) do |f| %>
-
-<%= f.email_field :email, placeholder: 'Email', required: true %><br>
-<%= f.password_field :password, placeholder: 'Password', required: true %><br>
-
-<%= f.submit 'Log in' %>
-
-<% end %>
+<!-- views/sessions/new -->
+<div class="mainview">
+  <h1 class="titledown-login">Please Log in</h1>
+    <div class="form-center">
+      <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.email_field :email, placeholder: 'Email', required: true %><br>
+      <%= f.password_field :password, placeholder: 'Password', required: true %><br>
+      <%= f.submit 'Log in' %>
+      <% end %>
+    </div>
+</div>

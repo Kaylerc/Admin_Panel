@@ -1,11 +1,17 @@
 <!-- <p>Find me in app/views/pages/home.html.erb</p> -->
-<h1>welcome to _System name__</h1>
-
-<%if logged_in? %>
-  <h1>Create a New: </h1>
-
-  <%= link_to 'Student', new_student_path %><br>
-  <%= link_to 'Instructor', new_instructor_path %><br>
-  <%= link_to 'Course', new_course_path %><br>
-  <%= link_to 'Cohort', new_cohort_path %><br>
-<%end %>
+<div class="mainview">
+  <%if logged_in? %>
+    <h1 class="titledown-login">Cool Kids Academy</h1>
+    <h1>Hey, <%= "#{current_user.first_name}"%>! Welcome back!</h1>
+    <h1>Create a New: </h1>
+    <div class="login-home">
+      <%= link_to 'Student', new_student_path %><br>
+      <%= link_to 'Instructor', new_instructor_path %><br>
+      <%= link_to 'Course', new_course_path %><br>
+      <%= link_to 'Cohort', new_cohort_path %><br>
+    </div>
+    <% else %>
+      <h1 class="titledown-home">Welcome to Cool Kids Academy</h1>
+      <p class="direction">Please select your action from the left navigation panel </p>
+    <%end %>
+</div>

@@ -13,3 +13,113 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+     margin: 0;
+     font-family: 'Maven Pro', sans-serif;
+     overflow: scroll;
+ }
+
+ .maingrid {
+   display: grid;
+   grid-template-columns: 20% 80%;
+   height: auto;
+ }
+
+ .mainview {
+   margin-left: 30%;
+ }
+
+ .titledown-reg {
+   margin-left: -36%;
+   text-align: center;
+   font-weight: bold;
+ }
+
+ .titledown {
+   margin-top: 15%;
+   margin-left: 17%;
+ }
+
+ .titledown-home {
+   margin-top: 15%;
+   margin-left: 4%;
+ }
+
+.direction {
+  margin-left: 10%;
+}
+
+ .titledown-login {
+   margin-top: 15%;
+   margin-left: 17%;
+   font-weight: bold;
+ }
+
+ .login-home {
+   font-size: 31px;
+   margin-left: 27%
+ }
+
+
+ .form-center {
+   margin-left: 17%
+ }
+
+ .form-center-new-student {
+   margin-top: 17%;
+   font-size: 16px;
+   margin-left: 15%;
+ }
+
+ ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     width: 25%;
+     background-color: #f1f1f1;
+     position: fixed;
+     height: 100%;
+     overflow: auto;
+ }
+
+.lidown {
+  margin-top: 80%;
+}
+
+ li a {
+     display: block;
+     color: #000;
+     padding: 8px 16px;
+     text-decoration: none;
+ }
+
+ li a.active {
+     background-color: #4CAF50;
+     color: white;
+ }
+
+ li a:hover:not(.active) {
+     background-color: #555;
+     color: white;
+ }
+
+
+.index-grid {
+    display: grid;
+    grid-template: auto/auto auto auto auto;
+    grid-gap: 2px;
+}
+
+.index-cells {
+    /* padding: 1em;
+    border: black 1px solid;
+    height: 75vh;
+    text-align: center; */
+
+    border-radius: 25px;
+    border: 2px solid orange;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}

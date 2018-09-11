@@ -1,11 +1,14 @@
+<div class="mainview">
+  <div class="form-center-new-student">
+    <h1>New Student</h1><br>
+    <%= link_to "Edit", edit_student_path %><br>
+    <%= link_to "Student Index", students_path %><br>
+    <%= link_to "Create New", new_student_path %><br><br>
 
-Students<br>
-<%= link_to "Edit", edit_student_path %><br>
-<%= link_to "Student Index", students_path %><br>
-<%= link_to "Create New", new_student_path %><br>
-
-First Name: &nbsp&nbsp <%= @student.first_name %> <br>
-Last Name: &nbsp &nbsp <%= @student.last_name %> <br>
-Email: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= @student.email %> <br>
-Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <%= @student.age %> <br>
-Education: &nbsp &nbsp&nbsp <%= @student.education %> <br>
+    First Name: &nbsp&nbsp <%= @student.first_name %> <br>
+    Last Name: &nbsp &nbsp <%= @student.last_name %> <br>
+    Email: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= @student.email %> <br>
+    Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <%= @student.age %> <br>
+    Education: &nbsp &nbsp&nbsp <%= @student.education %> <br>
+  </div>
+</div>

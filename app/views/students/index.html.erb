@@ -1,12 +1,17 @@
+<div class="mainview">
 <h1>Student Index</h1>
-  <% @students.each  do |s| %>
-    <%= s.last_name %><br>
-    <%= s.first_name %><br>
-    <%= s.email %><br>
-    <%= s.age %><br>
-    <%= s.education %><br>
-    <%= s.courses_id %><br>
-    <% s.id %>
-      <%= link_to "Edit", edit_student_path(s.id) %><br>
-      <%= link_to "Create New", new_student_path %><br>
+  <div>
+    <% @students.each  do |s| %>
+      <%= s.last_name %><br>
+      <%= s.first_name %><br>
+      <%= s.email %><br>
+      <%= s.age %><br>
+      <%= s.education %><br>
+      <%= s.courses_id %><br>
+      <% s.id %>
+        <%= link_to "Edit", edit_student_path(s.id) %><br>
+        <%= link_to "Create New", new_student_path %><br>
+
+  </div>
   <% end %>
+</div>
