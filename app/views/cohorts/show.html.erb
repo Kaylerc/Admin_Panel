@@ -1,16 +1,21 @@
-<%= link_to "Edit", edit_cohort_path %><br>
+<h1> Newly Created Cohort </h1>
+  <%= link_to "Edit", edit_cohort_path %><br>
+  <%= link_to "Cohort Index", cohorts_path %><br>
+  <%= link_to "Create New", new_cohort_path %><br>
+  <%= link_to 'Destroy', cohort_path,
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
 
+    Name: &nbsp&nbsp <%= @cohort.name %> <br>
+    Start Date: &nbsp &nbsp <%= @cohort.start_date %> <br>
+    End Date: &nbsp &nbsp <%= @cohort.end_date %> <br>
+    <% if @cohort.courses_id %>
+      Course: &nbsp &nbsp <%= Course.find(@cohort.courses_id).name %> <br>
+    <% end %>
+    <% if @cohort.instructor_id %>
+    Instructor: &nbsp &nbsp <%= Instructor.find(@cohort.instructor_id).full_name %> <br>
+    <% end %>
 
-Name: &nbsp&nbsp <%= @cohort.name %> <br>
-Start Date: &nbsp &nbsp <%= @cohort.start_date %> <br>
-End Date: &nbsp &nbsp <%= @cohort.end_date %> <br>
-<% if @cohort.courses_id %>
-  Course: &nbsp &nbsp <%= Course.find(@cohort.courses_id).name %> <br>
-  <% end %>
-<% if @cohort.instructor_id %>
-Instructor: &nbsp &nbsp <%= Instructor.find(@cohort.instructor_id).full_name %> <br>
-  <% end %>
+    Students Enrolled
 
-Students Enrolled
-
-<%= @cohort.students %> <br>
+    <%= @cohort.students %> <br>

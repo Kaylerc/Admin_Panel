@@ -1,5 +1,5 @@
 class CohortsController < ApplicationController
-  before_action :set_cohort, only: [:show, :edit, :update]
+  before_action :set_cohort, only: [:show, :edit, :update,]
 
   def index
     @cohorts = Cohort.all
@@ -21,6 +21,14 @@ class CohortsController < ApplicationController
       p @cohort.errors.messages
       render 'new'
     end
+  end
+
+
+
+  def destroy
+      @cohort = Cohort.find_by(params[:id])
+      @cohort.destroy
+      redirect_to cohort_path
   end
 
 
@@ -46,7 +54,7 @@ private
   end
 
   def cohort_params
-    params.require(:cohort).permit(:name, :start_date, :end_date, :instructor, :student_id, :instructor_id, :courses_id)
+    params.require(:cohort).permit(:name, :start_date, :end_date, :instructor, :student_id, :instructor_id, :courses_id, :id)
   end
 
 end

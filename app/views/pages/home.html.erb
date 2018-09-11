@@ -1,14 +1,11 @@
+<!-- <p>Find me in app/views/pages/home.html.erb</p> -->
+<h1>welcome to _System name__</h1>
 
-<h1>welcome to ____system name____</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%if logged_in? %>
+  <h1>Create a New: </h1>
 
-
-<%# if logged_in? %>
-<!-- you are logged in -->
-<%#end %>
-
-
-<%= link_to 'Students', students_path %><br>
-<%= link_to 'Instructors', instructors_path %><br>
-<%= link_to 'Courses', courses_path %><br>
-<%= link_to 'Cohorts', cohorts_path %><br>
+  <%= link_to 'Student', new_student_path %><br>
+  <%= link_to 'Instructor', new_instructor_path %><br>
+  <%= link_to 'Course', new_course_path %><br>
+  <%= link_to 'Cohort', new_cohort_path %><br>
+<%end %>

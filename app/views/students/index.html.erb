@@ -1,11 +1,12 @@
-<% @students.each  do |s| %>
-<%= p.last_name %>
-<%= p.first_name %>
-<%= p.email %>
-<%= p.age %>
-<%= p.education %>
-<%= p.course %>
-<%= p.cohort %>
-
-
-<% end %>
+<h1>Student Index</h1>
+  <% @students.each  do |s| %>
+    <%= s.last_name %><br>
+    <%= s.first_name %><br>
+    <%= s.email %><br>
+    <%= s.age %><br>
+    <%= s.education %><br>
+    <%= s.courses_id %><br>
+    <% s.id %>
+      <%= link_to "Edit", edit_student_path(s.id) %><br>
+      <%= link_to "Create New", new_student_path %><br>
+  <% end %>

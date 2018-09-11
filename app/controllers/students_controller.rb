@@ -17,6 +17,7 @@ before_action :set_student, only: [:show, :edit, :update]
 
 
   def edit
+    @students = Student.all
   end
 
 

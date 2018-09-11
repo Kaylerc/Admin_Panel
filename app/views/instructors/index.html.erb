@@ -1,2 +1,14 @@
+<!-- <p>Find me in app/views/instructors/index.html.erb</p> -->
 <h1>Instructors#index</h1>
-<p>Find me in app/views/instructors/index.html.erb</p>
+  <% @instructors.each  do |i| %>
+  <%= i.last_name %><br>
+  <%= i.first_name %><br>
+  <%= i.email %><br>
+  <%= i.age %><br>
+  <%= i.education %><br>
+  <%= i.salary %><br>
+  Teaching Cohort: &nbsp <%= i.cohort.name %><br>
+  <% i.id %>
+    <%= link_to "Edit", edit_instructor_path(i.id) %><br>
+    <%= link_to "Create New", new_instructor_path %><br>
+  <% end %>

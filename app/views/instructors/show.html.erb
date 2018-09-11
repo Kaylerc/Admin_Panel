@@ -1,7 +1,11 @@
 <!-- <h1>Instructors#show</h1>
 <p>Find me in app/views/instructors/show.html.erb</p> -->
 
+Instructors<br>
 <%= link_to 'Edit', edit_instructor_path %><br>
+<%= link_to "Instructors Index", instructors_path %><br>
+<%= link_to "Create New", new_instructor_path %><br>
+
 
 First Name: &nbsp&nbsp <%= @instructor.first_name %> <br>
 Last Name: &nbsp &nbsp <%= @instructor.last_name %> <br>
@@ -11,7 +15,4 @@ Education: &nbsp &nbsp&nbsp <%= @instructor.education %> <br>
 Salary: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp $  <%= @instructor.salary %> <br>
 
 <hb>
-  Teaching: &nbsp
-<% if @instructor.cohort_id%>
-  <%= Course.find(Cohort.find(@instructor.cohort_id).courses_id).name + " " + Cohort.find(@instructor.cohort_id).name %>
-<% end %>
+  Teaching: &nbsp <%= @instructor.cohort.name %>

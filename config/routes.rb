@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+    
+
 
   resources :cohorts
   resources :courses
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
   resources :instructors
   resources :users
 
+  get 'students/edit'
   # get 'sessions/new'
   # get 'sessions/create'
 
