@@ -1,16 +1,22 @@
 <div class="mainview">
 <h1>Student Index</h1>
-  <div>
-    <% @students.each  do |s| %>
-      <%= s.last_name %><br>
-      <%= s.first_name %><br>
-      <%= s.email %><br>
-      <%= s.age %><br>
-      <%= s.education %><br>
-      <%= s.courses_id %><br>
+  <div class="index-grid">
+    <% @students.each  do |s| %><br>
+    <div class="index-cells-stu">
+      Last Name: &nbsp&nbsp<%= s.last_name %><br>
+      First Name: &nbsp &nbsp<%= s.first_name %><br>
+      Email: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= s.email %><br>
+      Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp<%= s.age %><br>
+      Education: &nbsp &nbsp&nbsp <%= s.education %><br>
+      Course: &nbsp &nbsp&nbsp&nbsp<%= s.course_id %><br>
+      Cohort:  &nbsp &nbsp&nbsp &nbsp <%= Cohort.find(s.cohort_id).name if s.cohort_id%><br>
       <% s.id %>
-        <%= link_to "Edit", edit_student_path(s.id) %><br>
+        <%= link_to "Edit", edit_student_path(s.id) %>
         <%= link_to "Create New", new_student_path %><br>
+        <%= link_to 'Destroy', student_path(s),
+                method: :delete,
+                data: { confirm: 'Are you sure?', remote: true }, :class => 'terminate'  %><br>
+      </div>
     <% end %>
-  </div>
+</div>
 </div>

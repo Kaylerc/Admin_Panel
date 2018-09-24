@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course,  only: [:show, :edit, :update]
+  before_action :set_course,  only: [:show, :edit, :update, :destroy]
 
   def index
     @courses = Course.all
@@ -35,6 +35,18 @@ class CoursesController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+      course = Course.find(params[:id])
+      @course.destroy
+      respond_to do |format|
+        format.js
+        format.html { p 'html response'; redirect_to root_path }
+      end
+
+  end
+
+
 
   private
 

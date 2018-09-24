@@ -1,15 +1,23 @@
 <!-- <p>Find me in app/views/instructors/index.html.erb</p> -->
 <div class="mainview">
 <h1>Instructors#index</h1>
+<div class="index-grid">
   <% @instructors.each  do |i| %>
-  <%= i.last_name %><br>
-  <%= i.first_name %><br>
-  <%= i.email %><br>
-  <%= i.age %><br>
-  <%= i.education %><br>
-  <%= i.salary %><br>
-  Teaching Cohort: &nbsp <%= i.cohort.name %><br>
+  <div class="index-cells-ins">
+  Last Name: &nbsp&nbsp <%= i.last_name %><br>
+  First Name: &nbsp&nbsp <%= i.first_name %><br>
+  Email: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= i.email %><br>
+  Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <%= i.age %><br>
+  Education: &nbsp &nbsp&nbsp <%= i.education %><br>
+  Salary: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp $  <%= i.salary %><br>
+  Teaching : &nbsp <%= Course.find(i.cohort.course_id).name if i.cohort.course %> <%= i.cohort.name %><br>
   <% i.id %>
-    <%= link_to "Edit", edit_instructor_path(i.id) %><br>
+    <%= link_to "Edit", edit_instructor_path(i.id) %>
     <%= link_to "Create New", new_instructor_path %><br>
+    <%= link_to 'Destroy', instructor_path(i),
+            method: :delete,
+            data: { confirm: 'Are you sure?', remote: true }, :class => 'delete_instructor'  %><br>
+  </div>
   <% end %>
+</div>
+</div>

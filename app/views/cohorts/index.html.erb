@@ -1,16 +1,22 @@
 <!-- <p>Find me in app/views/cohort/index.html.erb</p> -->
 <div class="mainview">
-  <h1>Cohort#index</h1>
+  <h1>Cohort Index</h1>
+  <div class="index-grid">
   <% @cohorts.each  do |c| %>
-    <%= c.name %><br>
-    <%= c.start_date %><br>
-    <%= c.end_date %><br>
-    <%= c.instructor%><br>
-    <%= c.courses_id%><br>
+  <div class="index-cells-cohort">
+
+    Name: &nbsp&nbsp <%= c.name %><br>
+    Start Date: &nbsp &nbsp <%= c.start_date %><br>
+    End Date: &nbsp &nbsp <%= c.end_date %><br>
+    Instructor: &nbsp &nbsp <%= c.instructor_id%><br>
+    Course: &nbsp &nbsp <%= Course.find(c.course_id).name if c.course_id %><br>
     <% c.id%>
     <%= link_to "Edit", edit_cohort_path(c.id) %><br>
     <%= link_to "Create New", new_cohort_path %><br>
     <%= link_to 'Destroy', cohort_path(c.id),
                  method: :delete,
                  data: { confirm: 'Are you sure?' } %><br>
+     </div>
   <% end %>
+  </div>
+</div>

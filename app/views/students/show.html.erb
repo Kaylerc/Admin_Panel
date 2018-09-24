@@ -1,6 +1,6 @@
 <div class="mainview">
   <div class="form-center-new-student">
-    <h1>New Student</h1><br>
+    <h1>Student</h1><br>
     <%= link_to "Edit", edit_student_path %><br>
     <%= link_to "Student Index", students_path %><br>
     <%= link_to "Create New", new_student_path %><br><br>
@@ -10,5 +10,7 @@
     Email: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= @student.email %> <br>
     Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <%= @student.age %> <br>
     Education: &nbsp &nbsp&nbsp <%= @student.education %> <br>
+    Course: &nbsp &nbsp&nbsp&nbsp <%= Course.find(@student.course_id).name %><br>
+    Cohort:  &nbsp &nbsp&nbsp &nbsp <%= Cohort.find(@student.cohort_id).name  %>
   </div>
 </div>

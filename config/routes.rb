@@ -4,15 +4,15 @@ Rails.application.routes.draw do
   # root 'sessions#new'
 
   get 'register' => 'users#new'
-  get 'users/index'
-  get 'users/show'
-  get 'users/edit'
+  # get 'users/index'
+  # get 'users/show' => 'users#show'
+  # get 'users/edit'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-    
+
 
 
   resources :cohorts

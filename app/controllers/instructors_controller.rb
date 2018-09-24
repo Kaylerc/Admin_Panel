@@ -1,5 +1,5 @@
 class InstructorsController < ApplicationController
-before_action :set_instructor, only: [:show, :edit, :update]
+before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 after_action :update_info, only: [:create]
 
 
@@ -38,7 +38,6 @@ after_action :update_info, only: [:create]
     @courses = Course.all
   end
 
-
   def update
     if @instructor.update(instructor_params)
       p 'Instructor Successfully Updated!'
@@ -48,6 +47,13 @@ after_action :update_info, only: [:create]
   end
 end
 
+def destroy
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to root_path }
+    end
+    @instructor.destroy
+end
 
 
   private
@@ -57,12 +63,11 @@ end
     end
 
     def instructor_params
-      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohort_id, :course_id)
+      params.require(:instructor).permit(:first_name, :last_name, :email, :age, :education, :salary, :cohort_id, :course_id, :cohort_name)
     end
 
     def update_info
-      @instructor.update(cohort_name: "#{@instructor.cohort.name}
-        ")
+      @instructor.update(cohort_id: "#{@instructor.cohort.id}")
     end
 
 end

@@ -7,7 +7,6 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :password_digest
       t.string :education
-      t.string :salary
       t.integer :course_id
       t.integer :cohort_id
 

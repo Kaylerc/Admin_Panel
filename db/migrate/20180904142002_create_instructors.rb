@@ -9,10 +9,10 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
       t.string :education
       t.string :salary
       t.integer :course_id
-      t.integer :cohort_id
+      t.references :cohort, foreign_key: true
 
       t.timestamps
     end
-    add_index :instructors, :email, unique: true
+    # add_index :instructors, :email, unique: true
   end
   end

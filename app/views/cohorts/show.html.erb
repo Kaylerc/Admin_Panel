@@ -6,18 +6,16 @@
   <%= link_to "Create New", new_cohort_path %><br>
   <%= link_to 'Destroy', cohort_path,
           method: :delete,
-          data: { confirm: 'Are you sure?' } %>
+          data: { confirm: 'Are you sure?', remote: true }, class: 'terminate'  %><br>
 
     Name: &nbsp&nbsp <%= @cohort.name %> <br>
     Start Date: &nbsp &nbsp <%= @cohort.start_date %> <br>
     End Date: &nbsp &nbsp <%= @cohort.end_date %> <br>
-    <% if @cohort.courses_id %>
-      Course: &nbsp &nbsp <%= Course.find(@cohort.courses_id).name %> <br>
+    <% if @cohort.course_id %>
+      Course: &nbsp &nbsp <%= Course.find(@cohort.course_id).name %> <br>
     <% end %>
     <% if @cohort.instructor_id %>
     Instructor: &nbsp &nbsp <%= Instructor.find(@cohort.instructor_id).full_name %> <br>
     <% end %>
 
-    Students Enrolled
-
-    <%= @cohort.students %> <br>
+    <!-- Students Enrolled -->

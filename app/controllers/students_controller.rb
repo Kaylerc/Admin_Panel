@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-before_action :set_student, only: [:show, :edit, :update]
+before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
     @students = Student.all
@@ -46,6 +46,15 @@ before_action :set_student, only: [:show, :edit, :update]
   end
 
 
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to root_path}
+  end
+end
+
 private
 
   def set_student
@@ -53,6 +62,6 @@ private
   end
 
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :email, :age, :education)
+    params.require(:student).permit(:first_name, :last_name, :email, :age, :education, :cohort_id, :course_id, :course, :cohort)
   end
 end

@@ -1,11 +1,18 @@
 <!-- <p>Find me in app/views/courses/index.html.erb</p> -->
 <div class="mainview">
-  <h1>Courses#index</h1>
+  <h1>Courses Index</h1>
+  <div class="index-grid">
     <% @courses.each  do |p| %>
-    <%= p.name %><br>
-    <%= p.class_hours %><br>
+    <div class="index-cell-course">
+    Name: &nbsp&nbsp <%= p.name %><br>
+    Course Hours: &nbsp &nbsp <%= p.class_hours %><br>
     <% p.id %>
       <%= link_to "Edit", edit_course_path(p.id) %><br>
       <%= link_to "Create New", new_course_path %><br>
-
+      <%= link_to 'Destroy', course_path(p.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?', remote: true }, :class => 'terminate'  %><br>
+</div>
   <% end %>
+</div>
+</div>

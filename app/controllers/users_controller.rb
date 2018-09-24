@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:show, :edit, :update]
-  # after_action :update_info, only: [:create]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def new
     @user = User.new
@@ -15,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       msg = "Your account has been successfully created"
       p msg
-      redirect_to @user
+      redirect_to '/'
     else
         msg = "There was an error in creating your account.  Try again"
       p msg
@@ -23,7 +22,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  
+
   def show
     @user = User.find(params[:id])
   end
@@ -50,6 +49,6 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :photo, :password, :password_confirmaiton )
+    params.require(:user).permit(:first_name, :last_name, :email, :photo, :password, :password_confirmation)
   end
 end

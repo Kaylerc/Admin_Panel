@@ -16,6 +16,6 @@
     Salary: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp $  <%= @instructor.salary %> <br>
 
     <hb>
-      Teaching: &nbsp <%= @instructor.cohort.name %>
+      Teaching: &nbsp <%= Course.find(@instructor.cohort.course_id).name%>&nbsp <%= @instructor.cohort.name %>
     </div>
   </div>
