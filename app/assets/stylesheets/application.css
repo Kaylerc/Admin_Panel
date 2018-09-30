@@ -22,7 +22,7 @@
  }
 
 .maingrid {
-  display: grid | inline-grid;
+  display: grid inline-grid;
   grid-template: auto/auto auto auto;
   grid-gap: 10px;
   padding: 10px;
