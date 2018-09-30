@@ -67,7 +67,7 @@ end
     end
 
     def update_info
-      @instructor.update(cohort_id: "#{@instructor.cohort.id}")
+      # @instructor.update(cohort_id: "#{@instructor.cohort.id if @}")
     end
 
 end

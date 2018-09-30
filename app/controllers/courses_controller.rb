@@ -37,13 +37,16 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-      course = Course.find(params[:id])
+      @cohort = Cohort.where(course_id: @course_id)
+      @cohort.each do |course|
+        course.destroy
+      end
+      @course = Course.find(params[:id])
       @course.destroy
       respond_to do |format|
         format.js
         format.html { p 'html response'; redirect_to root_path }
       end
-
   end
 
 

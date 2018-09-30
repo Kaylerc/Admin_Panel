@@ -2,7 +2,7 @@
 <div class="mainview">
   <%if logged_in? %>
     <h1 class="titledown">Cool Kids Academy</h1>
-    <h1 class="home-welcome">Hey, <%= "#{current_user.first_name}"%>! Welcome back!</h1>
+    <h1 class="home-welcome">Hey, <%= "#{current_user.first_name}"%>Welcome back!</h1>
     <h1   class="home-welcome">Create a New: </h1>
     <div class="login-home">
       <%= link_to 'Student', new_student_path %><br>

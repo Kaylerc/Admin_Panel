@@ -47,6 +47,10 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
 
 
   def destroy
+    @cohort = Cohort.where(course_id: @course_id)
+    @cohort.each do |course|
+      course.destroy
+    end
     @student = Student.find(params[:id])
     @student.destroy
     respond_to do |format|

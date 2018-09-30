@@ -1,6 +1,6 @@
 <!-- <p>Find me in app/views/instructors/index.html.erb</p> -->
 <div class="mainview">
-<h1>Instructors#index</h1>
+<h1>Instructors index</h1>
 <div class="index-grid">
   <% @instructors.each  do |i| %>
   <div class="index-cells-ins">
@@ -10,7 +10,6 @@
   Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <%= i.age %><br>
   Education: &nbsp &nbsp&nbsp <%= i.education %><br>
   Salary: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp $  <%= i.salary %><br>
-  Teaching : &nbsp <%= Course.find(i.cohort.course_id).name if i.cohort.course %> <%= i.cohort.name %><br>
   <% i.id %>
     <%= link_to "Edit", edit_instructor_path(i.id) %>
     <%= link_to "Create New", new_instructor_path %><br>

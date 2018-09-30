@@ -9,7 +9,7 @@
     <% p.id %>
       <%= link_to "Edit", edit_course_path(p.id) %><br>
       <%= link_to "Create New", new_course_path %><br>
-      <%= link_to 'Destroy', course_path(p.id),
+      <%= link_to 'Destroy', course_path(p),
               method: :delete,
               data: { confirm: 'Are you sure?', remote: true }, :class => 'terminate'  %><br>
 </div>

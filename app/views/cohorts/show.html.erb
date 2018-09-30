@@ -4,9 +4,6 @@
   <%= link_to "Edit", edit_cohort_path %><br>
   <%= link_to "Cohort Index", cohorts_path %><br>
   <%= link_to "Create New", new_cohort_path %><br>
-  <%= link_to 'Destroy', cohort_path,
-          method: :delete,
-          data: { confirm: 'Are you sure?', remote: true }, class: 'terminate'  %><br>
 
     Name: &nbsp&nbsp <%= @cohort.name %> <br>
     Start Date: &nbsp &nbsp <%= @cohort.start_date %> <br>

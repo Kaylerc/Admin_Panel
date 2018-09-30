@@ -10,7 +10,7 @@
     Email: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= @student.email %> <br>
     Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <%= @student.age %> <br>
     Education: &nbsp &nbsp&nbsp <%= @student.education %> <br>
-    Course: &nbsp &nbsp&nbsp&nbsp <%= Course.find(@student.course_id).name %><br>
-    Cohort:  &nbsp &nbsp&nbsp &nbsp <%= Cohort.find(@student.cohort_id).name  %>
+    Course: &nbsp &nbsp&nbsp&nbsp <%= Course.find(@student.course_id).name if @student.course_id %><br>
+    Cohort:  &nbsp &nbsp&nbsp &nbsp <%= Cohort.find(@student.cohort_id).name if @student.cohort_id %>
   </div>
 </div>
