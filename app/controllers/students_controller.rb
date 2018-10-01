@@ -33,8 +33,9 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def create
     @student = Student.new(student_params)
-    # @courses = Course.all
-    # @cohorts = Cohort.all
+    @student.course_id = course_id
+    # @course = Course.all
+    # @cohort = Cohort.all
     if @student.save
       p 'student saved'
       redirect_to @student
