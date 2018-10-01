@@ -8,7 +8,9 @@
       Email: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= s.email %><br>
       Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp<%= s.age %><br>
       Education: &nbsp &nbsp&nbsp <%= s.education %><br>
-      Cohort:  &nbsp &nbsp&nbsp &nbsp <%= Cohort.find(s.cohort_id).name if s.cohort_id%><br>
+      Cohort:  &nbsp &nbsp&nbsp &nbsp <%= s.cohort_id%><br>
+      Course: <%=s.course_id %> <br>
+
       <% s.id %>
         <%= link_to "Edit", edit_student_path(s.id) %>
         <%= link_to "Create New", new_student_path %><br>
