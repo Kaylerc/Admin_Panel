@@ -13,11 +13,15 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def show
     # @student.cohort.uniq.each
+    @cohort = Cohort.all
+    @courses = Course.all
   end
 
 
   def edit
     @students = Student.all
+    @cohort = Cohort.all
+    @courses = Course.all
   end
 
 
@@ -32,12 +36,11 @@ before_action :set_student, only: [:show, :edit, :update, :destroy]
 
 
   def create
-    @student = Student.new(student_params)
-    @student.course_id = course_id
-    @course = Course.all
+    @courses = Course.all
     @cohort = Cohort.all
+      @student = Student.new(student_params)
     if @student.save
-      p 'student saved'
+      p 'student saved!'
       redirect_to @student
     else
       p 'Student input rejected for errors'
