@@ -9,7 +9,7 @@
       Age: &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp<%= s.age %><br>
       Education: &nbsp &nbsp&nbsp <%= s.education %><br>
       Cohort:  &nbsp &nbsp&nbsp &nbsp <%= Cohort.find(s.cohort_id).name if s.cohort_id%><br>
-      Course: <%=s.course_id %> <br>
+      Course: <%=s.courses_id %> <br>
 
       <% s.id %>
         <%= link_to "Edit", edit_student_path(s.id) %>
