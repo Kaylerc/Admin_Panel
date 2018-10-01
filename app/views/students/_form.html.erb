@@ -3,8 +3,8 @@
   <%= f.text_field :last_name, placeholder: 'Last Name', required: true %><br>
   <%= f.email_field :email, placeholder: 'Email', required: true %><br>
   <%= f.number_field :age, placeholder: 'Age', min: 1, max:150, required: true  %><br>
-Course:&nbsp  <%= f.collection_select(:course_id, Course.all, :id, :name, {include_blank: true}) %><br>
-Cohort:&nbsp  <%= f.collection_select(:cohort_id, Cohort.all, :id, :name, {include_blank: true}) %><br>
+<!-- Course:&nbsp  <%f.collection_select(:course_ids, Course.all, :id, :name, {include_blank: true}) %><br> -->
+Cohort:&nbsp  <%= f.collection_select(:cohort_ids, Cohort.all, :id, :name, {include_blank: true}) %><br>
 
 
     <b>Highest Level of Education</b><br>
