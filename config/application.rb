@@ -17,3 +17,11 @@ config.assets.initialize_on_precompile = false
     # the framework and any gems in your application.
   end
 end
+Raven.configure do |config|
+  config.dsn = 'https://SENTRY_ENV_KEY@sentry.io/1274649'
+  config.sanitize_fields = Rails.application.config.filter_parameters.map(&:to_s)
+
+end
+
+
+config.filter_parameters << :password
